@@ -22,8 +22,8 @@ struct LandmarkItem: View {
     }
 }
 
-struct LandmarkItem_Previews: PreviewProvider {
-    static var previews: some View {
-        LandmarkItem(landmark: ModelData().landmarks[0])
-    }
+#Preview {
+    let viewModel = LandmarkVM()
+    
+    LandmarkItem(landmark: viewModel.landmarks[0])
 }

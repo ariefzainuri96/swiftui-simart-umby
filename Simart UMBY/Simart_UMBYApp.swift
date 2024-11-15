@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Perception
 
 @main
 struct Simart_UMBYApp: App {
+//    let viewModel = LandmarkVM()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            LandmarkList().environment(viewModel)
+            LoginView()
         }
     }
 }

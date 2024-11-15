@@ -19,25 +19,27 @@ struct LandmarkList: View {
                 landmark.isFavorite
             }
         }
-
+        
         return viewModel.landmarks
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                Toggle(isOn: $showFavoriteOnly) {
-                    Text("Show Favorite").font(.system(size: 16, weight: .semibold))
-                }
-                ForEach(filteredLandmarks) { landmark in
-                    NavigationLink {
-                        LandmarkDetailView(landmark: landmark).environment(viewModel)
-                    } label: {
-                        LandmarkItem(landmark: landmark)
+        WithPerceptionTracking {
+            NavigationView {
+                List {
+                    Toggle(isOn: $showFavoriteOnly) {
+                        Text("Show Favorite").font(.system(size: 16, weight: .semibold))
                     }
-                }
-            }.navigationTitle("Landmarks")
-            .animation(.default, value: filteredLandmarks)
+                    ForEach(filteredLandmarks) { landmark in
+                        NavigationLink {
+                            LandmarkDetailView(viewModel: viewModel, landmark: landmark).environment(viewModel)
+                        } label: {
+                            LandmarkItem(landmark: landmark)
+                        }
+                    }
+                }.navigationTitle("Landmarks")
+                    .animation(.default, value: filteredLandmarks)
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ struct ContentView: View {
             
             VStack {
                 Circle().fill(viewModel.selectedColor).padding().overlay(
-                    Image(systemName: "figure.\(viewModel.selected.lowercased())").font(.system(size: 144))
+                    Image(systemName:       "figure.\(viewModel.selected.lowercased())").font(.system(size: 144))
                         .foregroundColor(.white)
                 )
                 
