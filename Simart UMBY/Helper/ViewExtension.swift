@@ -21,14 +21,4 @@ extension View {
         }
         .frame(maxWidth: .infinity)
     }
-    
-    // Custom padding modifier that accepts an array of CGFloat or a single CGFloat for multiple sides
-    func padding(_ edges: [(Edge.Set, CGFloat)]) -> some View {
-        var view = self
-        
-        for (edge, value) in edges {
-            view = view.padding(edge, value) as! Self
-        }
-        return view
-    }
 }

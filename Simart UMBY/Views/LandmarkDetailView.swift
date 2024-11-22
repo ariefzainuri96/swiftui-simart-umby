@@ -37,7 +37,7 @@ struct LandmarkDetailView: View {
                         
                         HStack(alignment: .top, spacing: 0) {
                             Text(landmark.park)
-                                .font(.subheadline).frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.subheadline).frame(maxWidth: .infinity, alignment: .leading).background(.red)
                             
                             Text(landmark.state).font(.subheadline)
                                                         

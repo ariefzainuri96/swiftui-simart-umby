@@ -3,55 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50107B952CE6F9FC0013EE56 /* NavigationSplitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50107B942CE6F9FC0013EE56 /* NavigationSplitViewWrapper.swift */; };
-		50107B982CE6FF650013EE56 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50107B972CE6FF650013EE56 /* LoginView.swift */; };
-		50107B9A2CE701CB0013EE56 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50107B992CE701CB0013EE56 /* ColorExtension.swift */; };
-		50107B9C2CE701D60013EE56 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50107B9B2CE701D60013EE56 /* ViewExtension.swift */; };
-		505CEC2E2CDF2E4F00217D02 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505CEC2D2CDF2E4F00217D02 /* LandmarkList.swift */; };
 		50646D172CDB1576000E104D /* Simart_UMBYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D162CDB1576000E104D /* Simart_UMBYApp.swift */; };
-		50646D192CDB1576000E104D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D182CDB1576000E104D /* ContentView.swift */; };
 		50646D1B2CDB1577000E104D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50646D1A2CDB1577000E104D /* Assets.xcassets */; };
 		50646D1F2CDB1577000E104D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50646D1E2CDB1577000E104D /* Preview Assets.xcassets */; };
-		50646D262CDB22B4000E104D /* LandmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D252CDB22B4000E104D /* LandmarkDetailView.swift */; };
-		50646D282CDB272C000E104D /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D272CDB272C000E104D /* CircleImageView.swift */; };
-		50646D2A2CDB2D76000E104D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D292CDB2D76000E104D /* Utils.swift */; };
-		50646D2C2CDB3DA8000E104D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D2B2CDB3DA8000E104D /* MapView.swift */; };
 		506BF9EB2CE4F4EB00566F6E /* Perception in Frameworks */ = {isa = PBXBuildFile; productRef = 506BF9EA2CE4F4EB00566F6E /* Perception */; };
-		50913C8E2CE43ED800A8DE02 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50913C8D2CE43ED800A8DE02 /* FavoriteButton.swift */; };
-		50A6D6472CE3A7D400393B85 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A6D6462CE3A7D400393B85 /* ContentViewModel.swift */; };
-		50AF16602CDE035600A81997 /* LandmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF165F2CDE035600A81997 /* LandmarkModel.swift */; };
-		50AF16632CDE045500A81997 /* LandmarkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF16622CDE045500A81997 /* LandmarkItem.swift */; };
-		50AF16652CDE06F600A81997 /* LandmarkVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF16642CDE06F600A81997 /* LandmarkVM.swift */; };
-		50AF16672CDE072300A81997 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 50AF16662CDE072300A81997 /* landmarkData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50107B942CE6F9FC0013EE56 /* NavigationSplitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSplitViewWrapper.swift; sourceTree = "<group>"; };
-		50107B972CE6FF650013EE56 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		50107B992CE701CB0013EE56 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		50107B9B2CE701D60013EE56 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		505CEC2D2CDF2E4F00217D02 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		50646D132CDB1576000E104D /* Simart UMBY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simart UMBY.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50646D162CDB1576000E104D /* Simart_UMBYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simart_UMBYApp.swift; sourceTree = "<group>"; };
-		50646D182CDB1576000E104D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50646D1A2CDB1577000E104D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50646D1C2CDB1577000E104D /* Simart_UMBY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Simart_UMBY.entitlements; sourceTree = "<group>"; };
 		50646D1E2CDB1577000E104D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		50646D252CDB22B4000E104D /* LandmarkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailView.swift; sourceTree = "<group>"; };
-		50646D272CDB272C000E104D /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
-		50646D292CDB2D76000E104D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		50646D2B2CDB3DA8000E104D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		50913C8D2CE43ED800A8DE02 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
-		50A6D6462CE3A7D400393B85 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		50AF165F2CDE035600A81997 /* LandmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkModel.swift; sourceTree = "<group>"; };
-		50AF16622CDE045500A81997 /* LandmarkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkItem.swift; sourceTree = "<group>"; };
-		50AF16642CDE06F600A81997 /* LandmarkVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkVM.swift; sourceTree = "<group>"; };
-		50AF16662CDE072300A81997 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		50A6B8FA2CF0CC98002C3FDF /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		50A6B90E2CF0CFFA002C3FDF /* Component */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Component; sourceTree = "<group>"; };
+		50A6B91B2CF0D004002C3FDF /* Helper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helper; sourceTree = "<group>"; };
+		50A6B92C2CF0D00A002C3FDF /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		50A6B9392CF0D011002C3FDF /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		50646D102CDB1576000E104D /* Frameworks */ = {
@@ -65,14 +41,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50107B962CE6FF590013EE56 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				50107B972CE6FF650013EE56 /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		50646D0A2CDB1576000E104D = {
 			isa = PBXGroup;
 			children = (
@@ -92,14 +60,15 @@
 		50646D152CDB1576000E104D /* Simart UMBY */ = {
 			isa = PBXGroup;
 			children = (
-				50913C8C2CE43E5100A8DE02 /* Component */,
-				50AF165E2CDE023800A81997 /* Helper */,
+				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
+				50A6B90E2CF0CFFA002C3FDF /* Component */,
+				50A6B91B2CF0D004002C3FDF /* Helper */,
 				50646D162CDB1576000E104D /* Simart_UMBYApp.swift */,
-				50AF165D2CDE022100A81997 /* Views */,
+				50A6B92C2CF0D00A002C3FDF /* Views */,
 				50646D1C2CDB1577000E104D /* Simart_UMBY.entitlements */,
 				50646D1D2CDB1577000E104D /* Preview Content */,
 				50646D1A2CDB1577000E104D /* Assets.xcassets */,
-				50AF16612CDE036300A81997 /* Model */,
+				50A6B9392CF0D011002C3FDF /* Model */,
 			);
 			path = "Simart UMBY";
 			sourceTree = "<group>";
@@ -110,66 +79,6 @@
 				50646D1E2CDB1577000E104D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		506BF9EC2CE50B6F00566F6E /* LandmarkList */ = {
-			isa = PBXGroup;
-			children = (
-				505CEC2D2CDF2E4F00217D02 /* LandmarkList.swift */,
-				50AF16642CDE06F600A81997 /* LandmarkVM.swift */,
-			);
-			path = LandmarkList;
-			sourceTree = "<group>";
-		};
-		50913C8C2CE43E5100A8DE02 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				50646D272CDB272C000E104D /* CircleImageView.swift */,
-				50AF16622CDE045500A81997 /* LandmarkItem.swift */,
-				50646D2B2CDB3DA8000E104D /* MapView.swift */,
-				50913C8D2CE43ED800A8DE02 /* FavoriteButton.swift */,
-				50107B942CE6F9FC0013EE56 /* NavigationSplitViewWrapper.swift */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
-		50A6D6492CE3AC8100393B85 /* ContentView */ = {
-			isa = PBXGroup;
-			children = (
-				50A6D6462CE3A7D400393B85 /* ContentViewModel.swift */,
-				50646D182CDB1576000E104D /* ContentView.swift */,
-			);
-			path = ContentView;
-			sourceTree = "<group>";
-		};
-		50AF165D2CDE022100A81997 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				50107B962CE6FF590013EE56 /* Login */,
-				506BF9EC2CE50B6F00566F6E /* LandmarkList */,
-				50A6D6492CE3AC8100393B85 /* ContentView */,
-				50646D252CDB22B4000E104D /* LandmarkDetailView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		50AF165E2CDE023800A81997 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				50646D292CDB2D76000E104D /* Utils.swift */,
-				50107B992CE701CB0013EE56 /* ColorExtension.swift */,
-				50107B9B2CE701D60013EE56 /* ViewExtension.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		50AF16612CDE036300A81997 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				50AF165F2CDE035600A81997 /* LandmarkModel.swift */,
-				50AF16662CDE072300A81997 /* landmarkData.json */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +95,13 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
+				50A6B90E2CF0CFFA002C3FDF /* Component */,
+				50A6B91B2CF0D004002C3FDF /* Helper */,
+				50A6B92C2CF0D00A002C3FDF /* Views */,
+				50A6B9392CF0D011002C3FDF /* Model */,
 			);
 			name = "Simart UMBY";
 			productName = "Simart UMBY";
@@ -235,7 +151,6 @@
 			files = (
 				50646D1F2CDB1577000E104D /* Preview Assets.xcassets in Resources */,
 				50646D1B2CDB1577000E104D /* Assets.xcassets in Resources */,
-				50AF16672CDE072300A81997 /* landmarkData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,22 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50646D2A2CDB2D76000E104D /* Utils.swift in Sources */,
-				50646D2C2CDB3DA8000E104D /* MapView.swift in Sources */,
-				50AF16652CDE06F600A81997 /* LandmarkVM.swift in Sources */,
-				50913C8E2CE43ED800A8DE02 /* FavoriteButton.swift in Sources */,
-				50AF16602CDE035600A81997 /* LandmarkModel.swift in Sources */,
-				50646D282CDB272C000E104D /* CircleImageView.swift in Sources */,
-				50107B9C2CE701D60013EE56 /* ViewExtension.swift in Sources */,
-				50646D192CDB1576000E104D /* ContentView.swift in Sources */,
-				50107B952CE6F9FC0013EE56 /* NavigationSplitViewWrapper.swift in Sources */,
-				50107B982CE6FF650013EE56 /* LoginView.swift in Sources */,
-				50107B9A2CE701CB0013EE56 /* ColorExtension.swift in Sources */,
-				50646D262CDB22B4000E104D /* LandmarkDetailView.swift in Sources */,
-				50AF16632CDE045500A81997 /* LandmarkItem.swift in Sources */,
 				50646D172CDB1576000E104D /* Simart_UMBYApp.swift in Sources */,
-				505CEC2E2CDF2E4F00217D02 /* LandmarkList.swift in Sources */,
-				50A6D6472CE3A7D400393B85 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

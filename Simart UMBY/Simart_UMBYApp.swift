@@ -10,12 +10,17 @@ import Perception
 
 @main
 struct Simart_UMBYApp: App {
-//    let viewModel = LandmarkVM()
+    @State var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-//            LandmarkList().environment(viewModel)
-            LoginView()
+            WithPerceptionTracking {
+                if (appState.isLogin) {
+                    DashboardView().environment(appState)
+                } else {
+                    LoginView().environment(appState)
+                }
+            }
         }
     }
 }
