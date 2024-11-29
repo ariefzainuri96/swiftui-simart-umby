@@ -11,8 +11,7 @@ import Perception
 struct DashboardView: View {
     @Environment(AppState.self) var appState
     
-    @State var dashboardVM = DashboardVM()
-    @State var isActive: Bool = false
+    @State private var dashboardVM = DashboardVM()
     
     var body: some View {
         WithPerceptionTracking {
@@ -39,7 +38,7 @@ struct DashboardView: View {
                         
                         NewsSection()
                         
-                        MenuSection().padding(.top, 10)
+                        MenuSection().environment(dashboardVM).padding(.top, 10)
                         
                         //                        @Perception.Bindable var _dashboardVM = dashboardVM
                         //
