@@ -10,8 +10,9 @@ import SwiftUI
 struct CustomTextField: View {
     @Binding var value: String
     var label: String?
-    var hint: String
+    var hint: String = ""
     var isObsecure: Bool = false
+    var disabled: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,6 +30,7 @@ struct CustomTextField: View {
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
             } else {
                 TextField(hint, text: $value)
+                    .disabled(disabled)
                     .font(.system(size: 14, weight: .thin))
                     .foregroundColor(Color("#333333"))
                     .background(Color.white)

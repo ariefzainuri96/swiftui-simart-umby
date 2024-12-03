@@ -9,18 +9,36 @@ import SwiftUI
 import Perception
 
 struct DataBarangAsetView: View {
+    let dataBarangAsetVM = DataBarangAsetVM()
+    
     @Environment(DashboardVM.self) var dashboardVM
     @Binding var shouldPopToRootView: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Data Barang Aset")
-            
-            Button(action: {
-                shouldPopToRootView = false
-            }) {
-                Text("Back to route")
+        WithPerceptionTracking {
+            ZStack {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(dataBarangAsetVM.dataBarangAsetList) { item in
+                            DataBarangAsetItem(data: item).padding(.bottom, 8)
+                        }
+                    }.padding(.horizontal, 16).padding(.top, 16)
+                }
+                
+                if (dataBarangAsetVM.dataBarangAsetState == RequestState.LOADING) {
+                    Text("Loading...")
+                }
             }
-        }.frame(maxWidth: .infinity)
+            .navigationTitle("Data Barang Aset")
+            .navigationBarTitleDisplayMode(.inline)
+            .task {
+                await dataBarangAsetVM.getDataBarangAset()
+            }
+            .onDisappear {
+                dataBarangAsetVM.reset()
+            }
+        }
     }
 }
+
+
