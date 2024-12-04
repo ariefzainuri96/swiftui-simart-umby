@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct DataBarangAsetItem: View {
-    let data: DataBarangAsetModel    
+    let data: DataBarangAsetModel
+    
+    @State private var isEditActive = false
+    
+    let menus: [PopupMenuModel] = [
+        PopupMenuModel(title: "Edit", icon: "ic-edit"),
+        PopupMenuModel(title: "Hapus", icon: "ic-trash", color: "#FF5D5D"),
+    ]
     
     var body: some View {
         VStack(alignment: .leading) {
+            NavigationLink(destination:
+                            EditDataBarangAsetView(data: data),
+               isActive: self.$isEditActive) {
+                 EmptyView()
+            }.hidden()
+            
             HStack(alignment: .top, spacing: 0) {
                 Text(data.namaBarang).font(.system(size: 14, weight: .medium, design: .default)).frame(maxWidth: .infinity, alignment: .leading)
-                Image("ic-menu-more").frame(width: 16, height: 16)
+                
+                Menu(content: {
+                    ForEach(Array(menus.enumerated()), id: \.element.title) {index, item in
+                        CustomPopupItem(data: item) {
+                            if index == 0 {
+                                isEditActive.toggle()
+                            }
+                        }
+                    }
+                }) {
+                    Image("ic-menu-more").frame(width: 16, height: 16)
+                }
             }
             
             HStack(spacing: 0) {

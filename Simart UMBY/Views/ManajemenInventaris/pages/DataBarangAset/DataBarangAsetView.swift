@@ -32,10 +32,11 @@ struct DataBarangAsetView: View {
             .navigationTitle("Data Barang Aset")
             .navigationBarTitleDisplayMode(.inline)
             .task {
+                if dataBarangAsetVM.dataBarangAsetState == RequestState.SUCCESS {
+                    return
+                }
+                    
                 await dataBarangAsetVM.getDataBarangAset()
-            }
-            .onDisappear {
-                dataBarangAsetVM.reset()
             }
         }
     }
