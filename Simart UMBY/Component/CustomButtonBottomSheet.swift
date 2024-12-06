@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct CustomButtonBottomSheet: View {
+struct CustomButtonBottomSheet<Content: View>: View {
     let label: String?
     let value: String
-    
+    let content: () -> Content
+        
     @State private var isSheetOpen = false
-    
+        
     var body: some View {
         VStack(alignment: .leading) {
             if (label != nil) {
@@ -26,19 +27,16 @@ struct CustomButtonBottomSheet: View {
             }
             .padding(.vertical, 12).padding(.horizontal, 16)
             .background(RoundedRectangle(cornerRadius: 4).stroke(Color("#E0E0E0"), lineWidth: 1))
+            .background(.white)
             .onTapGesture {
                 isSheetOpen.toggle()
             }
         }.sheet(isPresented: $isSheetOpen) {
-            BottomSheetView()
-        }
-    }
-}
-
-struct BottomSheetView: View {
-    var body: some View {
-        VStack {
-            Text("Text bottom sheet")
+            if #available(iOS 16.0, *) {
+                content().presentationDetents([.fraction(0.5)])
+            } else {
+                content()
+            }
         }
     }
 }

@@ -54,3 +54,8 @@ func setNavigationBarLayout(backgroundColor: String = "#1E3A8A") {
     // appearance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
     UINavigationBar.appearance().tintColor = .white // Back button and arrow color
 }
+
+func generateRandomString(length: Int) -> String {
+  let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  return String((0..<length).map{ _ in letters.randomElement()! })
+}

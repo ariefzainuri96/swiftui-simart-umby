@@ -30,9 +30,3 @@ struct CustomButton: View {
         .cornerRadius(8)
     }
 }
-
-#Preview {
-    CustomButton(title: "Testing", backgroundColor: Color("#18469C")) {
-        print("Testing")
-    }.padding(.horizontal, 16)
-}
