@@ -45,8 +45,6 @@ import Perception
         
         guard let _data = data else { return }
         
-        print("getVendor page -> \(vendorPage)")
-        
         if (vendorPage == vendorMaxPage) {
             vendorState = RequestState.MAX_PAGE
         }

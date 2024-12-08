@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-extension Binding where Value == String {
-    /// Create a `Binding<String>` from `Binding<String?>`, providing a default value for `nil`.
-    static func fromOptional(_ optional: Binding<String?>, defaultValue: String = "") -> Binding<String> {
-        Binding<String>(
-            get: { optional.wrappedValue ?? defaultValue },
-            set: { optional.wrappedValue = $0.isEmpty ? nil : $0 }
+extension Binding {    
+    func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T>  {
+        Binding<T>(
+            get: { self.wrappedValue ?? defaultValue },
+            set: { self.wrappedValue = $0 }
         )
     }
 }

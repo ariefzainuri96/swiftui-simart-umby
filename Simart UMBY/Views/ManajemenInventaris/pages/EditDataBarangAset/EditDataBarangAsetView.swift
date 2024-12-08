@@ -15,19 +15,27 @@ struct EditDataBarangAsetView: View {
     
     var body: some View {
         WithPerceptionTracking {
+            @Perception.Bindable var _bindableVM = viewModel
+            
             ZStack {
                 Color(.white)
                 
                 ScrollView {
-                    VStack {
-                        Text(viewModel.detailData.namaAset ?? "-")
+                    VStack(alignment: .leading) {
+                        CustomTextField(value: $_bindableVM.detailData.noInventaris.toUnwrapped(defaultValue: ""), label: "No Inventaris", disabled: true)
+                        
+                        CustomTextField(value: $_bindableVM.detailData.namaAset.toUnwrapped(defaultValue: ""), label: "Nama Aset").padding(.top, 16)
+                        
+                        CustomTextField(value: $_bindableVM.detailData.deskripsiAset.toUnwrapped(defaultValue: ""), label: "Deskripsi Aset", maxLine: 4, minLine: 4).padding(.top, 16)
+                        
+                        CustomTextField(value: $_bindableVM.detailData.spesifikasiAset.toUnwrapped(defaultValue: ""), label: "Spesifikasi Aset", maxLine: 8, minLine: 4).padding(.top, 16)
                         
                         CustomButtonBottomSheet(label: "Test", value: "Value") {
                             BottomSheetDropdown(title: "Pilih Vendor") {
                                 BottomSheetVendor(viewModel: viewModel)
                             }
                         }
-                    }
+                    }.padding(.all, 16)
                 }.navigationTitle("Edit Data Barang Aset").navigationBarTitleDisplayMode(.inline)
             }.task {
                 let vendorTask = Task {
