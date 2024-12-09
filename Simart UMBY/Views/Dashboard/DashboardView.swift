@@ -34,7 +34,7 @@ struct DashboardView: View {
                                     Color("#FFFFFF26")
                                 ).cornerRadius(1000)
                                 
-                                NavigationLink(destination: ProfileView()) {
+                                NavigationLink(destination: ProfileView().environment(appState)) {
                                     Text("S").font(.system(size: 14, weight: .medium)).foregroundColor(.white).frame(width: 36, height: 36).background(Color("#E53C3C")).cornerRadius(1000)
                                 }
                             }.padding(.top, 10).padding(.horizontal, 16)

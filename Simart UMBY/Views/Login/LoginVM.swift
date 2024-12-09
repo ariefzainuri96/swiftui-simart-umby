@@ -9,11 +9,30 @@ import Perception
 import Foundation
 
 @Perceptible class LoginVM {
+    let loginRepo = LoginRepositoryImpl()
+    
+    var loginState = RequestState.IDLE
     var loginForm: LoginFormModel = LoginFormModel()
     
-    func login(appState: AppState) {
-        UserDefaults.standard.set(true, forKey: UserDefaultsKey.IS_LOGIN)
+    func login(appState: AppState) async {
+        loginState = RequestState.LOADING
+
+        await delay(second: 1)
         
-        appState.isLogin = !appState.isLogin
+        await performNetworkingTask(
+            task: {
+                try await loginRepo.login(username: loginForm.nis, password: loginForm.password)
+            },
+            onSuccess: { data in
+                loginState = RequestState.SUCCESS
+                
+                UserDefaults.standard.set(true, forKey: UserDefaultsKey.IS_LOGIN)
+                
+                appState.isLogin = !appState.isLogin
+            },
+            onFailure: { error in
+                loginState = RequestState.ERROR
+            }
+        )
     }
 }

@@ -21,7 +21,7 @@ import Foundation
     func logout() {
         UserDefaults.standard.set(false, forKey: UserDefaultsKey.IS_LOGIN)
         
-        isLogin = !isLogin
+        isLogin.toggle()
     }
     
     init() {

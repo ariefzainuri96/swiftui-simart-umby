@@ -23,6 +23,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5005A3812D07AF2400BA69E8 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
 		50A6B8FA2CF0CC98002C3FDF /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		50A6B90E2CF0CFFA002C3FDF /* Component */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Component; sourceTree = "<group>"; };
 		50A6B91B2CF0D004002C3FDF /* Helper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helper; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		50646D152CDB1576000E104D /* Simart UMBY */ = {
 			isa = PBXGroup;
 			children = (
+				5005A3812D07AF2400BA69E8 /* Data */,
 				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
 				50A6B90E2CF0CFFA002C3FDF /* Component */,
 				50A6B91B2CF0D004002C3FDF /* Helper */,
@@ -99,6 +101,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				5005A3812D07AF2400BA69E8 /* Data */,
 				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
 				50A6B90E2CF0CFFA002C3FDF /* Component */,
 				50A6B91B2CF0D004002C3FDF /* Helper */,

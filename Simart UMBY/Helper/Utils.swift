@@ -59,3 +59,29 @@ func generateRandomString(length: Int) -> String {
   let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   return String((0..<length).map{ _ in letters.randomElement()! })
 }
+
+func performNetworkingTask<T>(
+    task: () async throws -> T?,
+    onSuccess: (T) -> Void,
+    onFailure: (_ error: String) -> Void
+) async {
+    do {
+        let result = try await task()
+        
+        guard let data = result else { return }
+        
+        onSuccess(data)
+    } catch NetworkingError.INVALID_RESPONSE {
+        onFailure("Error on the server")
+    } catch NetworkingError.INVALID_DATA {
+        onFailure("Error parsing response data")
+    } catch NetworkingError.INVALID_URL {
+        onFailure("Invalid URL")
+    } catch {
+        onFailure("Unexpected error: \(error)")
+    }
+}
+
+func delay(second: UInt64) async {
+    do { try await Task.sleep(nanoseconds: getSecond(second: second)) } catch {}
+}

@@ -9,6 +9,8 @@ import SwiftUI
 import Perception
 
 struct ProfileView: View {
+    @Environment(AppState.self) var appState
+    
     let profileVM = ProfileVM()
     
     var body: some View {
@@ -18,6 +20,10 @@ struct ProfileView: View {
             ScrollView {
                 VStack(spacing: 8) {
                     CustomTextField(value: $_profileVM.profileData.namaLengkap, label: "Nama Lengkap", disabled: true)
+                    
+                    CustomButton(title: "Logout", backgroundColor: .red) {
+                        appState.logout()
+                    }
                 }.padding(.horizontal, 16)
             }
             .navigationTitle("Profile")

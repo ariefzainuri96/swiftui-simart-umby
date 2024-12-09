@@ -11,9 +11,11 @@ import Perception
 struct LoginView: View {
     
     @Environment(AppState.self) var appState
-    @Perception.Bindable var model = LoginVM()
+    let model = LoginVM()
     
     var body: some View {
+        @Perception.Bindable var _model = model
+        
         WithPerceptionTracking {
             ScrollView {
                 VStack {
@@ -23,12 +25,14 @@ struct LoginView: View {
                     
                     Text("Sistem Informasi Aset Rumah Tangga").font(.system(size: 14)).foregroundStyle(Color("#465478")).padding(.top, 4)
                     
-                    CustomTextField(value: $model.loginForm.nis, label: "Testing", hint: "NIS").padding(.top, 24).padding(.horizontal, 16)
+                    CustomTextField(value: $_model.loginForm.nis, label: "Testing", hint: "NIS").padding(.top, 24).padding(.horizontal, 16)
                     
-                    CustomTextField(value: $model.loginForm.password, label: "Password", hint: "******", isObsecure: true).padding([.top,    .horizontal], 16)
+                    CustomTextField(value: $_model.loginForm.password, label: "Password", hint: "******", isObsecure: true).padding([.top,    .horizontal], 16)
                     
-                    CustomButton(title: "Login Local", backgroundColor: Color("#18469C"), action: {
-                        model.login(appState: appState)
+                    CustomButton(title: "Login Local", backgroundColor: model.loginState == RequestState.LOADING ? Color.gray : Color("#18469C"), action: {
+                        Task {
+                            await model.login(appState: appState)
+                        }
                     })
                     .padding(.horizontal, 16)
                     .padding(.top, 14)
@@ -40,7 +44,7 @@ struct LoginView: View {
                     .padding(.top, 14)
                     
                     HStack {
-                        CustomCheckbox(isChecked: $model.loginForm.isChecked, title: "Ingatkan Saya").frame(maxWidth: .infinity)
+                        CustomCheckbox(isChecked: $_model.loginForm.isChecked, title: "Ingatkan Saya").frame(maxWidth: .infinity)
                         CustomButton(title: "Lupa Password?", textColor: Color("#2F80ED"), action: {})
                     }.padding(.top, 12)
                     
@@ -59,9 +63,4 @@ struct LoginView: View {
             }
         }
     }
-}
-
-#Preview {
-    var model = LoginVM()
-    LoginView(model: model)
 }
