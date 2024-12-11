@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50072C7E2D0933D4004F6527 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50072C7D2D0933D4004F6527 /* AppState.swift */; };
 		50646D172CDB1576000E104D /* Simart_UMBYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50646D162CDB1576000E104D /* Simart_UMBYApp.swift */; };
 		50646D1B2CDB1577000E104D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50646D1A2CDB1577000E104D /* Assets.xcassets */; };
 		50646D1F2CDB1577000E104D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50646D1E2CDB1577000E104D /* Preview Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50072C7D2D0933D4004F6527 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		50646D132CDB1576000E104D /* Simart UMBY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simart UMBY.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50646D162CDB1576000E104D /* Simart_UMBYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simart_UMBYApp.swift; sourceTree = "<group>"; };
 		50646D1A2CDB1577000E104D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,7 +26,6 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5005A3812D07AF2400BA69E8 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
-		50A6B8FA2CF0CC98002C3FDF /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		50A6B90E2CF0CFFA002C3FDF /* Component */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Component; sourceTree = "<group>"; };
 		50A6B91B2CF0D004002C3FDF /* Helper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helper; sourceTree = "<group>"; };
 		50A6B92C2CF0D00A002C3FDF /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
@@ -63,8 +64,8 @@
 		50646D152CDB1576000E104D /* Simart UMBY */ = {
 			isa = PBXGroup;
 			children = (
+				50072C7D2D0933D4004F6527 /* AppState.swift */,
 				5005A3812D07AF2400BA69E8 /* Data */,
-				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
 				50A6B90E2CF0CFFA002C3FDF /* Component */,
 				50A6B91B2CF0D004002C3FDF /* Helper */,
 				50646D162CDB1576000E104D /* Simart_UMBYApp.swift */,
@@ -102,7 +103,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				5005A3812D07AF2400BA69E8 /* Data */,
-				50A6B8FA2CF0CC98002C3FDF /* ViewModel */,
 				50A6B90E2CF0CFFA002C3FDF /* Component */,
 				50A6B91B2CF0D004002C3FDF /* Helper */,
 				50A6B92C2CF0D00A002C3FDF /* Views */,
@@ -168,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50646D172CDB1576000E104D /* Simart_UMBYApp.swift in Sources */,
+				50072C7E2D0933D4004F6527 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

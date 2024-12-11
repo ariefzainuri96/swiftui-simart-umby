@@ -39,13 +39,21 @@ struct DashboardView: View {
                                 }
                             }.padding(.top, 10).padding(.horizontal, 16)
                             
-                            NewsSection()
+                            ZStack {
+                                NewsSection().environment(dashboardVM)
+                                
+                                if dashboardVM.pengumumanState == RequestState.LOADING {
+                                    ProgressView().frame(width: 20, height: 20, alignment: .center).tint(.white)
+                                }
+                            }
                             
                             MenuSection().environment(dashboardVM).padding(.top, 10)
                             
-                        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     }
                 }                            
+            }.task {
+                await dashboardVM.getPengumuman()
             }
         }
     }

@@ -13,6 +13,6 @@ protocol LoginRepository {
 
 class LoginRepositoryImpl: LoginRepository {
     func login(username: String, password: String) async throws -> LoginResponse {
-        return try await BaseHttpRequest.get(path: "/login")
+        return try await HttpRequest.get(path: "/login")
     }
 }
