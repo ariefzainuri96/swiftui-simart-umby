@@ -12,24 +12,30 @@ import SwiftUI
 @Perceptible class ProfileVM {
     private let profileRepo = ProfileRepositoryImpl()
     
-    var profileData = ProfileData()
+    var profileData = ProfileResponse()
     var profileState = RequestState.IDLE
+    var isEditable = false
     
     func getProfileData() async {
         profileState = RequestState.LOADING
         
-        let data = await profileRepo.getProfile()
+        await delay(second: 1)
         
-        profileState = data == nil ? RequestState.ERROR : RequestState.SUCCESS
-        
-        guard let _data = data else { return }
-        
-        profileData = _data
-        
-        print("getProfileData -> \(_data.namaLengkap)")
+        await performNetworkingTask(
+            task: {
+                try await profileRepo.getProfile()
+            },
+            onSuccess: {data in
+                profileState = RequestState.SUCCESS
+                profileData = data
+            },
+            onFailure: { error in
+                profileState = RequestState.ERROR
+            }
+        )
     }
     
     func resetData() {
-        profileData = ProfileData()
+        profileData = ProfileResponse()
     }
 }
