@@ -26,7 +26,7 @@ struct DataBarangAsetView: View {
                 }
                 
                 if (dataBarangAsetVM.dataBarangAsetState == RequestState.LOADING) {
-                    Text("Loading...")
+                    ProgressView().frame(width: 20, height: 20)
                 }
             }
             .navigationTitle("Data Barang Aset")

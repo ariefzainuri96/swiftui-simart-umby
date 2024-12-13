@@ -28,6 +28,6 @@ struct NewsSection: View {
                 .padding(.horizontal, 12) // Ensure partial visibility
                 .offset(x: CGFloat(currentIndex) * -totalWidth, y: 0)
             }
-        }.frame(maxHeight: 140)
+        }.frame(maxWidth: .infinity, maxHeight: 140)
     }
 }

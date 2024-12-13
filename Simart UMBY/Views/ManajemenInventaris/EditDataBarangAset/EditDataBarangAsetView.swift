@@ -20,24 +20,43 @@ struct EditDataBarangAsetView: View {
             ZStack {
                 Color(.white)
                 
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        CustomTextField(value: $_bindableVM.detailData.noInventaris.toUnwrapped(defaultValue: ""), label: "No Inventaris", disabled: true)
-                        
-                        CustomTextField(value: $_bindableVM.detailData.namaAset.toUnwrapped(defaultValue: ""), label: "Nama Aset").padding(.top, 16)
-                        
-                        CustomTextField(value: $_bindableVM.detailData.deskripsiAset.toUnwrapped(defaultValue: ""), label: "Deskripsi Aset", maxLine: 4, minLine: 4).padding(.top, 16)
-                        
-                        CustomTextField(value: $_bindableVM.detailData.spesifikasiAset.toUnwrapped(defaultValue: ""), label: "Spesifikasi Aset", maxLine: 8, minLine: 4).padding(.top, 16)
-                        
-                        CustomButtonBottomSheet(label: "Test", value: "Value") {
-                            BottomSheetDropdown(title: "Pilih Vendor") {
-                                BottomSheetVendor(viewModel: viewModel)
-                            }
+                if viewModel.state == RequestState.LOADING {
+                    ProgressView().frame(width: 20, height: 20)
+                } else if viewModel.state == RequestState.ERROR {
+                    CustomError {
+                        Task {
+                            await viewModel.getDetailData(data: data)
                         }
-                    }.padding(.all, 16)
-                }.navigationTitle("Edit Data Barang Aset").navigationBarTitleDisplayMode(.inline)
-            }.task {
+                    }
+                } else {
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 16) {
+                            CustomTextField(value: $_bindableVM.detailData.noInventaris.toUnwrapped(defaultValue: ""), label: "No Inventaris", disabled: true)
+                            
+                            CustomTextField(value: $_bindableVM.detailData.namaAset.toUnwrapped(defaultValue: ""), label: "Nama Aset")
+                            
+                            CustomTextField(value: $_bindableVM.detailData.deskripsiAset.toUnwrapped(defaultValue: ""), label: "Deskripsi Aset", maxLine: 4, minLine: 4)
+                            
+                            CustomTextField(value: $_bindableVM.detailData.spesifikasiAset.toUnwrapped(defaultValue: ""), label: "Spesifikasi Aset", maxLine: 8, minLine: 4)
+                            
+                            CustomCheckbox(isChecked: $_bindableVM.detailData.isAsetSPK.toUnwrapped(defaultValue: false), title: "Aset SPK ?")
+                            
+                            HStack(spacing: 12) {
+                                CustomTextField(value: $_bindableVM.detailData.noSPK.toUnwrapped(defaultValue: ""), label: "No SPK", hint: "Isi No SPK").frame(maxWidth: .infinity)
+                                
+                                CustomButtonBottomSheet(label: "Test", value: "Value") {
+                                    BottomSheetDropdown(title: "Pilih Vendor") {
+                                        BottomSheetVendor(viewModel: viewModel)
+                                    }
+                                }.frame(maxWidth: .infinity)
+                            }
+                        }.padding(.all, 16)
+                    }
+                }
+                
+            }
+            .navigationTitle("Edit Data Barang Aset").navigationBarTitleDisplayMode(.inline)
+            .task {
                 let vendorTask = Task {
                     await viewModel.getVendor()
                 }
