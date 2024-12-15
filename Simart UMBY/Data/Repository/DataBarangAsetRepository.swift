@@ -10,7 +10,8 @@ import Foundation
 protocol DataBarangAsetRepository {
     func getDataBarangAset() async -> [DataBarangAsetModel]?
     func getDetailBarangAset() async -> DetailDataBarangAsetModel?
-    func getVendor() async -> [String]?
+    func getVendor() async throws -> [String]?
+    func getKategoriAset() async throws -> [String]?
 }
 
 class DataBarangAsetRepositoryImpl: DataBarangAsetRepository {
@@ -52,7 +53,7 @@ class DataBarangAsetRepositoryImpl: DataBarangAsetRepository {
         }
     }
     
-    func getVendor() async -> [String]? {
+    func getVendor() async throws -> [String]? {
         do {
             try await Task.sleep(nanoseconds: getSecond(second: 1))
             
@@ -68,7 +69,27 @@ class DataBarangAsetRepositoryImpl: DataBarangAsetRepository {
             return decodedData
         } catch {
             print("Error happen: \(error)")
-            return nil
+            throw NetworkingError.INVALID_DATA
+        }
+    }
+    
+    func getKategoriAset() async throws -> [String]? {
+        do {
+            try await Task.sleep(nanoseconds: getSecond(second: 1))
+            
+            var data: [String] = []
+            for _ in Array(0...10) {
+                data.append(generateRandomString(length: 10))
+            }
+            
+            let jsonData = try JSONEncoder().encode(data)
+            
+            let decodedData = try JSONDecoder().decode([String].self, from: jsonData)
+            
+            return decodedData
+        } catch {
+            print("Error happen: \(error)")
+            throw NetworkingError.INVALID_DATA
         }
     }
 }

@@ -37,5 +37,9 @@ struct DetailDataBarangAsetModel: Codable {
     var sumberAset: String?
     var jumlahAset: String?
     var nvb: String?
-    var statusAset: String?    
+    var statusAset: String?
+    
+    mutating func update<Value>(_ keyPath: WritableKeyPath<Self, Value>, to value: Value) {
+        self[keyPath: keyPath] = value
+    }
 }

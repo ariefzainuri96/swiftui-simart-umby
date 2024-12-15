@@ -10,9 +10,9 @@ import SwiftUI
 struct CustomButtonBottomSheet<Content: View>: View {
     let label: String?
     let value: String
+    var isLoading: Bool = false
+    @Binding var isSheetOpen: Bool
     let content: () -> Content
-        
-    @State private var isSheetOpen = false
         
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,6 +29,10 @@ struct CustomButtonBottomSheet<Content: View>: View {
             .background(RoundedRectangle(cornerRadius: 4).stroke(Color("#E0E0E0"), lineWidth: 1))
             .background(.white)
             .onTapGesture {
+                if isLoading {
+                    return
+                }
+                
                 isSheetOpen.toggle()
             }
         }.sheet(isPresented: $isSheetOpen) {
